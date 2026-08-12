@@ -13,7 +13,13 @@ const postDaily = async (req, res, next) => {
 
 const getDaily = async (req, res, next) => {
   try {
-    const daily = await Daily.find();
+    const { startDate, endDate } = req.query;
+    const daily = await Daily.find({
+      createdAt: {
+        $gte: new Date(startDate),
+        $lte: new Date(endDate)
+      }
+    });
     return res.status(200).json({ message: 'Daily reports fetched successfully', daily });
   } catch (error) {
     next(error);
