@@ -5,7 +5,5 @@ const router = express.Router();
 
 router.get('/', getDaily);
 router.post('/', postDaily);
-router.get('/daily', getDaily);
-router.post('/daily', postDaily);
 
 module.exports = router;

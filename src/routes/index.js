@@ -6,7 +6,6 @@ const dailyRoutes = require('./daily-route');
 const router = express.Router();
 
 router.use('/health', healthRoutes);
-router.use('/user', userRoutes);
 router.use('/users', userRoutes);
 router.use('/daily', dailyRoutes);
 
